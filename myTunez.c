@@ -8,17 +8,39 @@ typedef struct song_node{
   struct song_node *next;
 } song_node;
 
+ 
 void print_list(struct song_node *start){
-  printf("%s -> ", start->val);
+  printf("%s - %s,  ", start -> artist, start -> name);
   if (start -> next != 0) print_list(start -> next);
   else printf("(nil)\n");
 }
 
-struct song_node* insert_front(struct song_node *list, char n[], char a[]){
-  struct song_node *newNode = (struct song_node *)malloc(sizeof(struct song_node));
-  newNode -> name = n;
-  newNode -> artist = a;
-  return newNode;
+void insert_front(song_node *list, char *n, char *a){
+  song_node *newNode = (song_node *)malloc(sizeof(song_node));
+  strcpy(newNode -> name, n);
+  strcpy(newNode -> artist, a);
+  newNode -> next = list;
 }
+
+song_node* insert_order(song_node *list, char *n, char *a){
+  song_node *newNode = (song_node *)malloc(sizeof(song_node));
+  int foundLoc = 0;
+}
+
+song_node* find_song(song_node *list, char *s){
+}
+
+void find_artist(song_node *list, char *a){
+}
+
+void remove_node(song_node *list){
+}
+
+int main(){
+  return 0;
+}
+
+
+
 
 
