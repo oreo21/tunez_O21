@@ -1,6 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#ifndef LINK_LIST_H
+#define LINK_LIST_H
 
 typedef struct song_node{
   char name[256];
@@ -15,17 +14,25 @@ void print_list(struct song_node *start){
   else printf("(nil)\n");
 }
 
-void insert_front(song_node *list, char *n, char *a){
+void print_node(song_node *start){
+}
+
+void print_artist(song_node *start, char *a){}
+
+song_node* insert_front(song_node *list, char *n, char *a){
   song_node *newNode = (song_node *)malloc(sizeof(song_node));
   strcpy(newNode -> name, n);
   strcpy(newNode -> artist, a);
   newNode -> next = list;
+  return newNode;
 }
 
 song_node* insert_order(song_node *list, char *n, char *a){
   song_node *newNode = (song_node *)malloc(sizeof(song_node));
   int foundLoc = 0;
 }
+
+song_node* free_list(song_node* list){}
 
 song_node* find_song(song_node *list, char *s){
 }
@@ -40,7 +47,7 @@ int main(){
   return 0;
 }
 
-
+#endif
 
 
 

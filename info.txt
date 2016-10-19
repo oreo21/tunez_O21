@@ -1,0 +1,5 @@
+linked_list.c, .h
+main.c
+music_library.c, .h
+
+for .c and .h file pair, put .h in ifndef block in the .c file
